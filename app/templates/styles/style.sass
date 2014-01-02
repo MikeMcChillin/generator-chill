@@ -1,0 +1,32 @@
+//////////////////////////////
+// Media Queries
+//////////////////////////////
+// http://blog.divshot.com/post/29552945105/useful-sass-mixins-for-responsive-design-font-sizing
+// https://gist.github.com/rickharris/1493930
+// This style of media query uses Sass 3.2 and Compass 0.13. Must update for it to work.
+// Do not style media queries here. They go inline like so:
+//
+//      ul
+//          border-top: 1px solid #808080
+//          +respond-to(tablet-portrait)
+//              border: 0
+
+$tablet-portrait: 37.5em //600px
+$tablet-landscape: 48em // 768px
+$desktop: 60em // 960px
+
+=respond-to($media)
+    // Tablet Portrait
+    @if $media == tablet-portrait
+        @media (min-width: $tablet-portrait)
+            @content
+    // Tablet Landscape - Desktop
+    @if $media == tablet-landscape
+        @media (min-width: $tablet-landscape)
+            @content
+    // Large Desktop
+    @if $media == desktop
+        @media (min-width: $desktop)
+            @content
+
+@import "global"
